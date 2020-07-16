@@ -7,7 +7,7 @@ namespace App\Http\Requests;
 use App\ValidationRules\SortRule;
 use Illuminate\Validation\Rule;
 
-class BookmarkRequest extends ApiStrictFormRequest
+class SearchBookmarkRequest extends ApiStrictFormRequest
 {
     /**
      * Get the validation rules that apply to the request.
@@ -17,6 +17,7 @@ class BookmarkRequest extends ApiStrictFormRequest
     public function rules()
     {
         return [
+            'query' => 'required|string',
             'sortBy' => [
                 'string',
                 new SortRule,

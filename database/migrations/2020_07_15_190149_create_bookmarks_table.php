@@ -15,11 +15,11 @@ class CreateBookmarksTable extends Migration
     {
         Schema::create('bookmarks', function (Blueprint $table) {
             $table->id('bookmark_id');
-            $table->string('favicon');
-            $table->string('url');
-            $table->string('title');
-            $table->string('description');
-            $table->string('keywords');
+            $table->string('favicon')->nullable();
+            $table->string('url')->unique();
+            $table->string('title')->nullable();
+            $table->text('description')->nullable();
+            $table->text('keywords')->nullable();
             $table->timestamps();
             $table->index(['created_at']);
         });

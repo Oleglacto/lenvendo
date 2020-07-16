@@ -16,4 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => 'bookmarks', 'as' => 'bookmarks.'], function () {
     Route::post('/', 'BookmarkController@make')->name('store');
+    Route::get('/', 'BookmarkController@list')->name('list');
+    Route::get('/search', 'BookmarkController@search')->name('search');
+    Route::get('/report', 'ReportsController@make')->name('report');
+    Route::get('/{bookmark}', 'BookmarkController@show')->name('show');
 });
+
+Route::get('/reports', 'ReportsController@list')->name('reports.list');

@@ -86,4 +86,5 @@ return [
         'table' => 'failed_jobs',
     ],
 
+    'reports' => 'lenvendo.reports',
 ];
