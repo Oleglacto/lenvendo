@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Storage;
 |
 */
 
-Route::get('/test', function () {
-   \App\Jobs\MakeReport::dispatchNow();
-});
-
 Route::get('/{any?}', function () {
     return view('welcome');
 })->where('any', '[\/\w\.-]*');
